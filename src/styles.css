@@ -89,9 +89,19 @@ main {
 .weather-forecast-date {
   opacity: 0.5;
   font-size: 16px;
+  margin: 5px auto;
+  padding-left: 5px;
 }
 .weather-forecast-temperature-min {
   opacity: 0.5;
+}
+.weather-forecast-temperature-max {
+  padding-left: -10px;
+}
+#forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 footer {

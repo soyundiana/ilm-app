@@ -51,3 +51,33 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML += `
+      <div class="weather-forecast-week">
+        <div class="row">
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img src="https://static-00.iconduck.com/assets.00/sunny-icon-2048x2048-atsm4a75.png" width="36"/>
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max">18°</span>
+              <span class="weather-forecast-temperature-min">11°</span>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+
+  forecastElement.style.display = "flex"; // Use flexbox
+  forecastElement.style.flexWrap = "nowrap"; // Prevent wrapping to next line
+}
+
+
+displayForecast();
