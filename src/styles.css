@@ -54,7 +54,6 @@ main {
   display: flex;
   justify-content: space-between;
 }
-
 .current-city {
   font-size: 38px;
   font-weight: 900;
@@ -73,8 +72,7 @@ main {
 
 .current-temperature-icon {
   position: relative;
-  top: -8px;
-  font-size: 40px;
+  margin-top: 60px;
   margin-right: 10px;
 }
 
@@ -87,6 +85,13 @@ main {
   font-size: 28px;
   position: relative;
   top: -38px;
+}
+.weather-forecast-date {
+  opacity: 0.5;
+  font-size: 16px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
 
 footer {
