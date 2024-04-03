@@ -4,14 +4,14 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
+getForecast(response.data.city);
 }
-
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;
 
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiKey = "3t6dd836d3b2360o01bbc44d5dfa374c";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
@@ -51,8 +51,14 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
+function getForecast(city) {
+  let apiKey = "3t6dd836d3b2360o01bbc44d5dfa374c";
+  let apiUrl =`https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&khttps://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+console.log(apiUrl);
+}
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHTML = "";
@@ -74,9 +80,6 @@ function displayForecast() {
   });
 
   forecastElement.innerHTML = forecastHTML;
-
-  forecastElement.style.display = "flex"; // Use flexbox
-  forecastElement.style.flexWrap = "nowrap"; // Prevent wrapping to next line
 }
 
 
